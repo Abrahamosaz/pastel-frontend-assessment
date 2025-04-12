@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Container from "@/components/Container";
 
 export const metadata: Metadata = {
   title: "Pastel Africa Frontend Assessment",

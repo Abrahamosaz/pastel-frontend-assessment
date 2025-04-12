@@ -1,3 +1,4 @@
+import { CustomLinkProps } from "@/types";
 import React from "react";
 
 const CustomLink: React.FC<CustomLinkProps> = ({ ...props }) => {

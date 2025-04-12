@@ -2,6 +2,9 @@
 
 @theme {
   --color-primary: #4d3bdb;
+  --color-secondary: #ddd9fd;
+  --color-hover: #ebe8fe;
+  --color-footer-primary: #827f96;
 }
 
 :root {
