@@ -1,111 +1,123 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import CustomButton from "../shared/CustomButton";
-import { navBarLinks } from "@/constants";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { IoIosArrowDown } from "react-icons/io";
+import { navBarLinks } from "@/constants";
+import { cn } from "@/lib/utils";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
+import CustomButton from "../shared/CustomButton";
 import { motion } from "motion/react";
-import { NavBarItemsProps, NavBarLinkProps } from "@/types";
+import Image from "next/image";
+import { Logo } from "@/public/icons";
+import classNames from "classnames";
 
-interface NavDropdownProps {
-  items: NavBarItemsProps[];
-  onMouseEnter: () => void;
-  onMouseLeave: () => void;
-}
-
-const NavDropdown: React.FC<NavDropdownProps> = ({
-  items,
-  onMouseEnter,
-  onMouseLeave,
-}) => {
+const ListItem = React.forwardRef<
+  React.ComponentRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
   return (
-    <motion.div
-      className="absolute top-full left-0 mt-[8px] backdrop-blur-md bg-white/70 z-[-9999px] rounded-lg shadow-lg p-6 w-[600px] overflow-hidden"
-      // ref={dropdownRef}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-      initial={{ opacity: 0, height: 0 }}
-      animate={{ opacity: 1, height: "auto" }}
-      exit={{ opacity: 0, height: 0 }}
-      transition={{
-        height: {
-          duration: 0.3,
-          ease: "easeIn",
-        },
-        opacity: {
-          duration: 0.3,
-          ease: "easeIn",
-        },
-      }}
-    >
-      <div className="grid grid-cols-2 gap-2">
-        {items.map((item, index) => (
-          <div
-            key={item.id}
-            className="flex flex-col gap-1 p-3 rounded-lg hover:bg-[#EBE8FE] transition-colors cursor-pointer"
-          >
-            <h3 className="text-sm font-medium text-gray-900">{item.title}</h3>
-            <p className="text-xs text-gray-500">{item.description}</p>
-          </div>
-        ))}
-      </div>
-    </motion.div>
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
   );
-};
+});
+
+ListItem.displayName = "ListItem";
 
 const Navbar = () => {
-  const [hoverItem, setHoveredItem] = useState<number | null>(null);
-  const [navItems, setNavItems] = useState<NavBarLinkProps | null>(null);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    if (hoverItem) {
-      const navItems = navBarLinks.find((items) => items.id === hoverItem);
-      setNavItems(navItems || null);
-    }
-  }, [hoverItem]);
+    const handleScroll = () => {
+      const currentScrollPos = window.scrollY;
+
+      // Make the navbar visible when scrolling up
+      setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
+
+      setPrevScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [prevScrollPos]);
 
   return (
-    <div className="hidden md:flex w-full py-4 items-center justify-center">
-      <div className="w-full flex items-center justify-between">
+    <div
+      className={`hidden lg:flex w-full py-4 items-center justify-center fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-sm z-50 transition-transform duration-300 ${
+        visible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
+      <div className="w-[90%] md:w-[80%] xl:w-[75%] 2xl:w-[70%] flex items-center justify-between">
         <div className="flex items-center">
-          <h1 className="font-semibold text-primary text-xl mr-10">droip</h1>
+          <Image src={Logo} alt="Logo" className="mr-10" />
 
-          <div className="relative flex items-center gap-6">
-            {navBarLinks?.map((link) => (
-              <div
-                key={link.id}
-                onClick={() => setHoveredItem(link.id)}
-                onMouseEnter={() => setHoveredItem(link.id)}
-                onMouseLeave={() => {
-                  setNavItems(null);
-                }}
-                className="flex items-center text-sm gap-1 cursor-pointer"
-              >
-                <Link href="#">{link.label}</Link>
-                {link.items && (
-                  <div
-                    className="transition-transform duration-300"
-                    style={{
-                      transform: `rotate(${
-                        hoverItem === link.id ? 180 : 0
-                      }deg)`,
-                    }}
-                  >
-                    <IoIosArrowDown />
-                  </div>
-                )}
-              </div>
-            ))}
+          <NavigationMenu>
+            <NavigationMenuList>
+              {navBarLinks.map((link, index) => (
+                <NavigationMenuItem key={link.id}>
+                  {link.items ? (
+                    <>
+                      <NavigationMenuTrigger className="cursor-pointer font-normal text-base bg-transparent hover:bg-transparent focus:bg-transparent">
+                        {link.label}
+                      </NavigationMenuTrigger>
+                      <NavigationMenuContent className="animate-in slide-in-from-top-2 duration-300 ease-out border-none">
+                        <ul className="grid w-[600px] gap-3 p-4 grid-cols-2">
+                          {link.items.map((item) => (
+                            <ListItem
+                              key={item.id}
+                              title={item.title}
+                              href="#"
+                              className="hover:bg-secondary/70"
+                            >
+                              {item.description}
+                            </ListItem>
+                          ))}
+                        </ul>
+                      </NavigationMenuContent>
+                    </>
+                  ) : (
+                    <NavigationMenuLink
+                      className={classNames({
+                        "cursor-pointer text-base bg-transparent hover:bg-transparent focus:bg-transparent":
+                          true,
 
-            {navItems && navItems?.items && (
-              <NavDropdown
-                items={navItems.items}
-                onMouseEnter={() => setHoveredItem(navItems.id)}
-                onMouseLeave={() => setNavItems(null)}
-              />
-            )}
-          </div>
+                        "font-semibold": index === 0,
+                      })}
+                      href="#"
+                    >
+                      {link.label}
+                    </NavigationMenuLink>
+                  )}
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
 
         <div className="flex items-center gap-4">

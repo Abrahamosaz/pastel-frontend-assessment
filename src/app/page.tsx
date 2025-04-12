@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import DesignPixel from "@/components/DesignPixel";
 import Hero from "@/components/Hero";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
     <Container>
       <>
         <Hero />
+        <DesignPixel />
       </>
     </Container>
   );

@@ -1,6 +1,7 @@
 import { FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { FooterLinkProps, NavBarLinkProps } from "./types";
+import { DesignPixelsProps, FooterLinkProps, NavBarLinkProps } from "./types";
+import { craftEngage, designPixel } from "@/public/images";
 
 export const navBarLinks: NavBarLinkProps[] = [
   { id: 1, label: "Home", items: null },
@@ -176,5 +177,67 @@ export const footerLinks: FooterLinkProps[] = [
       { id: 1, label: "Pricing" },
       { id: 2, label: "Contact Us" },
     ],
+  },
+];
+
+export const designPixels: DesignPixelsProps[] = [
+  {
+    id: 1,
+    title: "Advanced typography",
+    description:
+      "Take full control over your text with precision typography tools. Adjust fonts, spacing, and styles to add more character to your design.",
+    image: designPixel.image1,
+  },
+  {
+    id: 2,
+    title: "CSS grids and layouts",
+    description:
+      "Build complex layouts with ease using CSS Grids. Create multi-directional structures, manage spacing, and achieve perfect alignment without limitations.",
+    image: designPixel.image2,
+  },
+  {
+    id: 3,
+    title: "Adaptive design",
+    description:
+      "Ensure flawless responsiveness across all devices. Design with adaptive elements that adjust seamlessly to different screen sizes and resolutions.",
+    image: designPixel.image3,
+  },
+  {
+    id: 4,
+    title: "Designed for efficiency",
+    description:
+      "Streamline your workflow with intuitive tools that simplify layout structuring. Save time while maintaining complete design accuracy and flexibility.",
+    image: designPixel.image4,
+  },
+];
+
+export const craftEngages: DesignPixelsProps[] = [
+  {
+    id: 1,
+    title: "Advanced interaction timeline",
+    description:
+      "Design smooth, multi-step animations with a timeline-based editor for complete control.",
+    image: craftEngage.image5,
+  },
+  {
+    id: 2,
+    title: "Custom timing editor",
+    description:
+      "Fine-tune every interaction to deliver flawless performance by adjusting delays, durations, easing functions, and more.",
+    image: craftEngage.image6,
+  },
+  {
+    id: 3,
+    title: "Advanced triggers",
+    description:
+      "Trigger animations based on scrolling, hovering, page load, and more for a dynamic experience.",
+    image: craftEngage.image7,
+  },
+  {
+    id: 4,
+    title: "Achieve limitless precision",
+    description:
+      "Create flawless, interactive designs visually with unmatched accuracy and finesse.",
+    image: craftEngage.image8,
   },
 ];

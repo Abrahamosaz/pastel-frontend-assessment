@@ -1,4 +1,5 @@
 import { StaticImageData } from "next/image";
+import { ReactNode } from "react";
 import { IconType } from "react-icons";
 
 export interface CustomButtonProps {
@@ -10,7 +11,9 @@ export interface CustomButtonProps {
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export interface TypographyProps {}
+export interface TypographyProps {
+  label: string;
+}
 
 export interface CustomLinkProps {}
 
@@ -36,4 +39,11 @@ export interface FooterLinkProps {
   id: number;
   label: string;
   items: FooterItemsProps[];
+}
+
+export interface DesignPixelsProps {
+  id: number;
+  title: string;
+  description: string;
+  image: StaticImageData;
 }
