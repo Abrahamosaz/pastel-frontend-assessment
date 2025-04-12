@@ -1,31 +1,6 @@
-import { StaticImageData } from "next/image";
-import { IconType } from "react-icons";
 import { FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-
-export interface NavBarItemsProps {
-  id: number;
-  icon: StaticImageData | null;
-  title: string;
-  description: string;
-}
-
-export interface NavBarLinkProps {
-  id: number;
-  label: string;
-  items: NavBarItemsProps[] | null;
-}
-
-export interface FooterItemsProps {
-  id: number;
-  label: IconType | string;
-}
-
-export interface FooterLinkProps {
-  id: number;
-  label: string;
-  items: FooterItemsProps[];
-}
+import { FooterLinkProps, NavBarLinkProps } from "./types";
 
 export const navBarLinks: NavBarLinkProps[] = [
   { id: 1, label: "Home", items: null },

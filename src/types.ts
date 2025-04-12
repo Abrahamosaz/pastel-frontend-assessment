@@ -1,3 +1,4 @@
+import { StaticImageData } from "next/image";
 import { IconType } from "react-icons";
 
 export interface CustomButtonProps {
@@ -12,3 +13,27 @@ export interface CustomButtonProps {
 export interface TypographyProps {}
 
 export interface CustomLinkProps {}
+
+export interface NavBarItemsProps {
+  id: number;
+  icon: StaticImageData | null;
+  title: string;
+  description: string;
+}
+
+export interface NavBarLinkProps {
+  id: number;
+  label: string;
+  items: NavBarItemsProps[] | null;
+}
+
+export interface FooterItemsProps {
+  id: number;
+  label: IconType | string;
+}
+
+export interface FooterLinkProps {
+  id: number;
+  label: string;
+  items: FooterItemsProps[];
+}

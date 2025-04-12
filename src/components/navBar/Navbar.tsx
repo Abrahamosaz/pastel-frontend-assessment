@@ -2,11 +2,11 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import CustomButton from "../shared/CustomButton";
-import { NavBarItemsProps, NavBarLinkProps, navBarLinks } from "@/constants";
+import { navBarLinks } from "@/constants";
 import Link from "next/link";
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import useOnClickOutside from "@/hooks/useClickOutside";
+import { IoIosArrowDown } from "react-icons/io";
 import { motion } from "motion/react";
+import { NavBarItemsProps, NavBarLinkProps } from "@/types";
 
 interface NavDropdownProps {
   items: NavBarItemsProps[];
