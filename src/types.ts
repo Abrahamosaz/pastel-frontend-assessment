@@ -46,4 +46,17 @@ export interface DesignPixelsProps {
   title: string;
   description: string;
   image: StaticImageData;
+  showLink: boolean;
+}
+
+export interface CardContentProps {
+  title: string;
+  description: string;
+  icon: any;
+  titleStyle?: string;
+  descriptionStyle?: string;
+  iconStyle?: string;
+  containerStyle?: string;
+  textContainerStyle?: string;
+  className?: string;
 }

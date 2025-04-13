@@ -187,6 +187,7 @@ export const designPixels: DesignPixelsProps[] = [
     description:
       "Take full control over your text with precision typography tools. Adjust fonts, spacing, and styles to add more character to your design.",
     image: designPixel.image1,
+    showLink: true,
   },
   {
     id: 2,
@@ -194,6 +195,7 @@ export const designPixels: DesignPixelsProps[] = [
     description:
       "Build complex layouts with ease using CSS Grids. Create multi-directional structures, manage spacing, and achieve perfect alignment without limitations.",
     image: designPixel.image2,
+    showLink: true,
   },
   {
     id: 3,
@@ -201,6 +203,7 @@ export const designPixels: DesignPixelsProps[] = [
     description:
       "Ensure flawless responsiveness across all devices. Design with adaptive elements that adjust seamlessly to different screen sizes and resolutions.",
     image: designPixel.image3,
+    showLink: false,
   },
   {
     id: 4,
@@ -208,6 +211,7 @@ export const designPixels: DesignPixelsProps[] = [
     description:
       "Streamline your workflow with intuitive tools that simplify layout structuring. Save time while maintaining complete design accuracy and flexibility.",
     image: designPixel.image4,
+    showLink: false,
   },
 ];
 
@@ -218,6 +222,7 @@ export const craftEngages: DesignPixelsProps[] = [
     description:
       "Design smooth, multi-step animations with a timeline-based editor for complete control.",
     image: craftEngage.image5,
+    showLink: false,
   },
   {
     id: 2,
@@ -225,6 +230,7 @@ export const craftEngages: DesignPixelsProps[] = [
     description:
       "Fine-tune every interaction to deliver flawless performance by adjusting delays, durations, easing functions, and more.",
     image: craftEngage.image6,
+    showLink: false,
   },
   {
     id: 3,
@@ -232,6 +238,7 @@ export const craftEngages: DesignPixelsProps[] = [
     description:
       "Trigger animations based on scrolling, hovering, page load, and more for a dynamic experience.",
     image: craftEngage.image7,
+    showLink: false,
   },
   {
     id: 4,
@@ -239,5 +246,6 @@ export const craftEngages: DesignPixelsProps[] = [
     description:
       "Create flawless, interactive designs visually with unmatched accuracy and finesse.",
     image: craftEngage.image8,
+    showLink: false,
   },
 ];

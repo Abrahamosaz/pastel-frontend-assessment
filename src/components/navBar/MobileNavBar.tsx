@@ -16,8 +16,8 @@ const MobileNavBar = () => {
   const [activeOpenNav, setActiveOpenNav] = useState<number | null>(null);
 
   return (
-    <div className="w-full flex flex-col lg:hidden">
-      <div className="w-full flex items-center justify-between py-4">
+    <div className="w-full flex flex-col items-center justify-center lg:hidden">
+      <div className="w-[90%] flex items-center justify-between py-4">
         <Image src={Logo} alt="Logo" className="w-15 md:w-24" />
 
         <div className="relative w-8 h-8 flex items-center justify-center">

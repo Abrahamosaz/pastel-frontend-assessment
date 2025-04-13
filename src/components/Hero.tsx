@@ -4,14 +4,14 @@ import React from "react";
 import CustomButton from "./shared/CustomButton";
 import { AiOutlinePlayCircle } from "react-icons/ai";
 import { IoIosArrowForward } from "react-icons/io";
-import { HeroImage } from "@/public/images";
+import { heroImage } from "@/public/images";
 import Image from "next/image";
 import { motion } from "motion/react";
 
 const Hero = () => {
   return (
     <div className="mt-20 lg:mt-35 w-full flex items-center justify-center">
-      <div className="w-full flex flex-col gap-4">
+      <div className="w-[90%] lg:w-[80%] 2xl:w-[70%] flex flex-col gap-4">
         <div className="w-fit py-2 px-6 rounded-4xl text-base md:text-lg font-bold bg-secondary">
           No-Code WordPress Site Builder
         </div>
@@ -64,7 +64,7 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeInOut" }}
         >
           <Image
-            src={HeroImage}
+            src={heroImage}
             alt="Hero Image"
             className="w-full h-full object-cover rounded-lg border-[10px] border-secondary"
           />

@@ -13,7 +13,7 @@ const MobileFooter = () => {
 
   return (
     <div className="w-full flex flex-col md:hidden items-center justify-center">
-      <div className="w-full flex flex-col gap-12">
+      <div className="w-[90%] flex flex-col gap-12">
         <div className="w-full grid grid-cols-2 gap-4 gap-y-12">
           {footersGrid?.map((footer) => (
             <div key={footer!.id} className="flex flex-col gap-6">
