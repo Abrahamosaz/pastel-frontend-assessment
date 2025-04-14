@@ -118,6 +118,8 @@
   --color-hover: #ebe8fe;
   --color-footer-primary: #827f96;
   --color-bg-primary: #f5f5f7;
+  --color-bg-app-integration: #ebe8fe;
+  --color-bg-app-integration-active: #c9c2fb;
 }
 
 @layer utilities {

@@ -3,7 +3,6 @@
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import { styled } from "@mui/material/styles";
-import { designPixels } from "@/constants";
 import { DesignPixelsProps } from "@/types";
 import { useState } from "react";
 import Image from "next/image";
@@ -24,6 +23,15 @@ const FeatureItem = styled("div")<FeatureItemProps>(
     position: "relative",
     paddingLeft: theme.spacing(6),
     paddingBottom: isLastItem ? theme.spacing(0) : theme.spacing(6),
+    [theme.breakpoints.up("sm")]: {
+      paddingBottom: isLastItem ? theme.spacing(0) : theme.spacing(4),
+    },
+    [theme.breakpoints.up("lg")]: {
+      paddingBottom: isLastItem ? theme.spacing(0) : theme.spacing(8),
+    },
+    [theme.breakpoints.up("xl")]: {
+      paddingBottom: isLastItem ? theme.spacing(0) : theme.spacing(10),
+    },
     "&::before": {
       content: '""',
       position: "absolute",
@@ -56,8 +64,28 @@ const FeaturesList = ({
   features: DesignPixelsProps[];
   isReverse?: boolean;
 }) => {
-  const [activeId, setActiveId] = useState<number>(designPixels[0]?.id);
-  const currentImage = features.find((feature) => feature.id === activeId);
+  const [selectedFeature, setSelectedFeature] = useState<any | null>(
+    features[0]
+  );
+
+  const [previousFeature, setPreviousFeature] = useState<any | null>(null);
+  const [direction, setDirection] = useState<"left" | "right">("right");
+
+  // // Handle feature selection
+  const handleFeatureSelect = (feature: DesignPixelsProps) => {
+    if (feature.id === selectedFeature.id) return;
+
+    // Save the current feature as previous before updating
+    setPreviousFeature(selectedFeature);
+
+    // Determine direction based on feature id
+    if (feature.id > selectedFeature.id) {
+      setDirection("right");
+    } else {
+      setDirection("left");
+    }
+    setSelectedFeature(feature);
+  };
 
   return (
     <div
@@ -75,24 +103,24 @@ const FeaturesList = ({
         {features.map((feature, index) => (
           <FeatureItem
             key={feature.id}
-            isActive={feature.id === activeId}
+            isActive={feature.id === selectedFeature.id}
             isLastItem={index === features?.length - 1}
           >
             <div
-              onClick={() => setActiveId(feature.id)}
+              onClick={() => handleFeatureSelect(feature)}
               className="w-full cursor-pointer flex flex-col gap-6"
             >
               <Typography
                 variant="h6"
                 className={classNames({
-                  "text-[#939394]": feature.id !== activeId,
-                  "!font-bold !text-3xl": feature.id === activeId,
+                  "text-[#939394]": feature.id !== selectedFeature.id,
+                  "!font-bold !text-3xl": feature.id === selectedFeature.id,
                 })}
               >
                 {feature.title}
               </Typography>
               <AnimatePresence>
-                {activeId == feature.id && (
+                {selectedFeature.id === feature.id && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
@@ -115,8 +143,8 @@ const FeaturesList = ({
                       )}
 
                       <Image
-                        className="mt-10 flex lg:hidden h-[350px] object-cover rounded-2xl"
-                        src={currentImage?.image!}
+                        className="mt-10 flex lg:hidden object-cover rounded-2xl"
+                        src={selectedFeature?.image!}
                         alt="feature image"
                       />
                     </div>
@@ -128,26 +156,122 @@ const FeaturesList = ({
         ))}
       </Box>
 
-      <div className="w-[55%] hidden lg:flex relative">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={currentImage?.id}
-            initial={{ opacity: 0, rotateY: -90 }}
-            animate={{ opacity: 1, rotateY: 0 }}
-            exit={{ opacity: 0, rotateY: 90 }}
-            transition={{
-              duration: 0.7,
-              ease: "easeInOut",
-            }}
-            style={{ transformStyle: "preserve-3d" }}
-          >
-            <Image
-              className="h-[530px] object-cover rounded-2xl"
-              src={currentImage?.image!}
-              alt="feature image"
-            />
-          </motion.div>
-        </AnimatePresence>
+      <div className="hidden lg:flex w-[55%] md:h-[30rem] lg:h-[30rem] xl:h-[35rem]">
+        <div className="w-full h-full relative rounded-[1.2rem] overflow-hidden bg-gray-100">
+          <AnimatePresence initial={false}>
+            {direction === "right" ? (
+              <>
+                {/* Base layer - new selected image */}
+                <div
+                  className="absolute inset-0 flex items-center justify-center rounded-[1.2rem]"
+                  style={{ zIndex: 1 }}
+                  key="base-right"
+                >
+                  <div className="w-full h-full relative rounded-[1.2rem]">
+                    <Image
+                      src={selectedFeature.image}
+                      alt={selectedFeature.title}
+                      fill
+                      priority
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      style={{
+                        objectFit: "cover",
+                        objectPosition: "center",
+                        borderRadius: "1.2rem",
+                      }}
+                    />
+                  </div>
+                </div>
+
+                {/* Previous image sliding out */}
+                {previousFeature && (
+                  <motion.div
+                    key={`previous-${previousFeature.id}`}
+                    className="absolute inset-0 flex items-center justify-center rounded-[1.2rem]"
+                    style={{ zIndex: 2 }}
+                    initial={{ x: "0%" }}
+                    animate={{ x: "-100%" }}
+                    exit={{ x: "-100%" }}
+                    transition={{
+                      type: "tween",
+                      ease: "easeInOut",
+                      duration: 0.6,
+                    }}
+                  >
+                    <div className="w-full h-full relative rounded-[1.2rem]">
+                      <Image
+                        src={previousFeature.image}
+                        alt={previousFeature.title}
+                        fill
+                        priority
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        style={{
+                          objectFit: "cover",
+                          objectPosition: "center",
+                          borderRadius: "1.2rem",
+                        }}
+                      />
+                    </div>
+                  </motion.div>
+                )}
+              </>
+            ) : (
+              <>
+                {/* Base layer - previous image */}
+                <div
+                  className="absolute inset-0 flex items-center justify-center rounded-[1.2rem]"
+                  style={{ zIndex: 1 }}
+                  key="base-left"
+                >
+                  <div className="w-full h-full relative rounded-[1.2rem]">
+                    <Image
+                      src={previousFeature?.image || selectedFeature.image}
+                      alt={previousFeature?.title || selectedFeature.title}
+                      fill
+                      priority
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      style={{
+                        objectFit: "cover",
+                        objectPosition: "center",
+                        borderRadius: "1.2rem",
+                      }}
+                    />
+                  </div>
+                </div>
+
+                {/* New image sliding in */}
+                <motion.div
+                  key={`selected-${selectedFeature.id}`}
+                  className="absolute inset-0 flex items-center justify-center rounded-[1.2rem]"
+                  style={{ zIndex: 2 }}
+                  initial={{ x: "-100%" }}
+                  animate={{ x: "0%" }}
+                  exit={{ x: "-100%" }}
+                  transition={{
+                    type: "tween",
+                    ease: "easeInOut",
+                    duration: 0.6,
+                  }}
+                >
+                  <div className="w-full h-full relative rounded-[1.2rem]">
+                    <Image
+                      src={selectedFeature.image}
+                      alt={selectedFeature.title}
+                      fill
+                      priority
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      style={{
+                        objectFit: "cover",
+                        objectPosition: "center",
+                        borderRadius: "1.2rem",
+                      }}
+                    />
+                  </div>
+                </motion.div>
+              </>
+            )}
+          </AnimatePresence>
+        </div>
       </div>
     </div>
   );

@@ -28,12 +28,12 @@ const GetStarted = () => {
       <div className="w-[90%] lg:w-[80%] 2xl:w-[70%]">
         <div
           id="get-started"
-          className="relative w-full rounded-2xl bg-black text-white flex items-center justify-between py-15 px-20"
+          className="relative w-full rounded-3xl bg-black text-white flex flex-col gap-8 md:flex-row items-start lg:items-center justify-between p-10 md:p-15 md:py-18"
         >
-          <h1 className="text-6xl">
+          <h1 className="text-4xl lg:text-6xl font-semibold">
             Get Started <br /> For Free
           </h1>
-          <div className="flex flex-col gap-6 w-[30%]">
+          <div className="flex flex-col gap-8 w-full md:w-[40%] 2xl:w-[31%] text-xs md:text-sm lg:text-base font-medium leading-[22px]">
             <p>
               Experience the power of Droip no-code website builder, risk free.
               Create stunning, responsive sites with pure creative freedom.
@@ -42,7 +42,7 @@ const GetStarted = () => {
             <CustomButton
               label="Try for Free"
               onClick={() => {}}
-              className="font-medium"
+              className="font-medium text-lg py-3 rounded-3xl"
               icon={IoIosArrowForward}
               iconStyle="text-primary"
             />

@@ -16,7 +16,12 @@ const DesignBuild = () => {
               build everything
             </h2>
           }
-          content="more efficiently with the most advanced granular controls"
+          content={
+            <p className="text-xl md:text-2xl font-medium">
+              more efficiently with the <strong>most advanced</strong> granular
+              controls
+            </p>
+          }
           isShort={true}
         />
 

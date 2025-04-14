@@ -23,6 +23,7 @@ import notes from "./navBar/resources/notes.svg";
 import contact from "./navBar/support/contact.svg";
 import feature from "./navBar/support/feature.svg";
 import support_ from "./navBar/support/support.svg";
+import { appIntegrationIcons } from "./appIntegration";
 
 const product = {
   accessibility,
@@ -44,4 +45,4 @@ const support = { contact, feature, support_ };
 
 const navbar = { product, resource, support };
 
-export { Logo, control, dollar, secure, workflow, navbar };
+export { Logo, control, dollar, secure, workflow, navbar, appIntegrationIcons };
