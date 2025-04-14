@@ -1,8 +1,7 @@
 import { TypographyProps } from "@/types";
 import React from "react";
-import { cn } from "@/utils/cn";
 
-const Typography: React.FC<TypographyProps> = ({ label }) => {
+const Typography: React.FC<TypographyProps> = ({}) => {
   return <div className="w-full"></div>;
 };
 

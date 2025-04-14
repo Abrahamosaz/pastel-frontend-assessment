@@ -2,6 +2,7 @@ import { FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { DesignPixelsProps, FooterLinkProps, NavBarLinkProps } from "./types";
 import { craftEngage, designPixel } from "@/public/images";
+import { navbar } from "@/public/icons";
 
 export const navBarLinks: NavBarLinkProps[] = [
   { id: 1, label: "Home", items: null },
@@ -11,67 +12,67 @@ export const navBarLinks: NavBarLinkProps[] = [
     items: [
       {
         id: 1,
-        icon: null,
+        icon: navbar.product.editor,
         title: "Editor",
         description: "Effective Visual Builder",
       },
       {
         id: 2,
-        icon: null,
+        icon: navbar.product.animation,
         title: "Interaction & Animation",
         description: "Design interactive websites",
       },
       {
         id: 3,
-        icon: null,
+        icon: navbar.product.grids,
         title: "Grids & Layouts",
         description: "Structure more easily",
       },
       {
         id: 4,
-        icon: null,
+        icon: navbar.product.media,
         title: "Media Manager",
         description: "Manage & edit site assets",
       },
       {
         id: 5,
-        icon: null,
+        icon: navbar.product.typography,
         title: "Typography",
         description: "Customize your branding",
       },
       {
         id: 6,
-        icon: null,
+        icon: navbar.product.form,
         title: "Form Builder",
         description: "Design any web forms",
       },
       {
         id: 7,
-        icon: null,
+        icon: navbar.product.popUp,
         title: "Pop-up Builder",
         description: "Build pop-ups visually",
       },
       {
         id: 8,
-        icon: null,
+        icon: navbar.product.content,
         title: "Content Manager",
         description: "Centralized dynamic content management",
       },
       {
         id: 9,
-        icon: null,
+        icon: navbar.product.seo,
         title: "SEO",
         description: "Optimize your SEO workflow",
       },
       {
         id: 10,
-        icon: null,
+        icon: navbar.product.accessibility,
         title: "Accessibility",
         description: "Accessible to everyone",
       },
       {
         id: 11,
-        icon: null,
+        icon: navbar.product.figma,
         title: "Figma to Droip",
         description: "Turn static design into live websites",
       },
@@ -83,19 +84,19 @@ export const navBarLinks: NavBarLinkProps[] = [
     items: [
       {
         id: 1,
-        icon: null,
+        icon: navbar.resource.blogs,
         title: "Droip Blogs",
         description: "Explore what's happening",
       },
       {
         id: 2,
-        icon: null,
+        icon: navbar.resource.documentation,
         title: "Documentation",
         description: "Learn from documentation",
       },
       {
         id: 3,
-        icon: null,
+        icon: navbar.resource.notes,
         title: "Release Notes",
         description: "Check what's new",
       },
@@ -107,19 +108,19 @@ export const navBarLinks: NavBarLinkProps[] = [
     items: [
       {
         id: 1,
-        icon: null,
+        icon: navbar.support.support_,
         title: "Get Support",
         description: "Fix your issues with our experts",
       },
       {
         id: 2,
-        icon: null,
+        icon: navbar.support.feature,
         title: "Feature Request",
         description: "Let us know what's missing",
       },
       {
         id: 3,
-        icon: null,
+        icon: navbar.support.contact,
         title: "Contact",
         description: "Contact for query",
       },

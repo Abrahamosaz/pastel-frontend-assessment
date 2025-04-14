@@ -15,7 +15,9 @@ export interface TypographyProps {
   label: string;
 }
 
-export interface CustomLinkProps {}
+export interface CustomLinkProps {
+  label: string;
+}
 
 export interface NavBarItemsProps {
   id: number;
@@ -50,9 +52,9 @@ export interface DesignPixelsProps {
 }
 
 export interface CardContentProps {
-  title: string;
+  title: string | ReactNode;
   description: string;
-  icon: any;
+  icon: any | null;
   titleStyle?: string;
   descriptionStyle?: string;
   iconStyle?: string;

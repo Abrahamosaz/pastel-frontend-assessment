@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { navBarLinks } from "@/constants";
 import { cn } from "@/lib/utils";
 import {
@@ -11,10 +10,9 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
+  // navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import CustomButton from "../shared/CustomButton";
-import { motion } from "motion/react";
 import Image from "next/image";
 import { Logo } from "@/public/icons";
 import classNames from "classnames";

@@ -6,6 +6,8 @@ import Hero from "@/components/Hero";
 import ScaleBusiness from "@/components/ScaleBusiness";
 import ThirdPartyDep from "@/components/ThirdPartyDep";
 import Performance from "@/components/Performance";
+import DesignBuild from "@/components/DesignBuild";
+import GetStarted from "@/components/GetStarted";
 
 export default function Home() {
   return (
@@ -19,6 +21,8 @@ export default function Home() {
         <ThirdPartyDep />
         <Performance />
         <AppIntegration />
+        <DesignBuild />
+        <GetStarted />
       </>
     </Container>
   );

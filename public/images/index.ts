@@ -16,6 +16,17 @@ import image11 from "./scaleBusiness/scale_image_3.webp";
 import image12 from "./performance/perf_image1.webp";
 import image13 from "./performance/perf_image2.webp";
 
+import ai from "./designBuild/ai.webp";
+import autosaved from "./designBuild/autoSaved.webp";
+import breakpoints from "./designBuild/breakpoints.webp";
+import code from "./designBuild/code.webp";
+import css from "./designBuild/css.webp";
+import figma from "./designBuild/figma.webp";
+import formBuilder from "./designBuild/formBuilder.webp";
+import global from "./designBuild/global.webp";
+import popUp from "./designBuild/popUp.webp";
+import safety from "./designBuild/safety.webp";
+
 const designPixel = { image1, image2, image3, image4 };
 
 const craftEngage = { image5, image6, image7, image8 };
@@ -24,4 +35,24 @@ const scaleBusiness = { image9, image10, image11 };
 
 const performance = { image12, image13 };
 
-export { heroImage, designPixel, craftEngage, scaleBusiness, performance };
+const designBuild = {
+  ai,
+  autosaved,
+  breakpoints,
+  code,
+  css,
+  figma,
+  formBuilder,
+  global,
+  popUp,
+  safety,
+};
+
+export {
+  heroImage,
+  designPixel,
+  craftEngage,
+  scaleBusiness,
+  performance,
+  designBuild,
+};

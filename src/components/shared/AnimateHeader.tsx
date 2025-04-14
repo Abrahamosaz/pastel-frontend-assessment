@@ -1,13 +1,19 @@
 "use client";
 
 import React, { ReactNode, useEffect, useRef } from "react";
+import classNames from "classnames";
 
 interface AnimateHeaderProps {
   title: string | ReactNode;
   content: string | ReactNode;
+  isShort?: boolean;
 }
 
-const AnimateHeader: React.FC<AnimateHeaderProps> = ({ title, content }) => {
+const AnimateHeader: React.FC<AnimateHeaderProps> = ({
+  title,
+  content,
+  isShort = false,
+}) => {
   const horizontalLineRef = useRef<HTMLDivElement>(null);
   const verticalLineRef = useRef<HTMLDivElement>(null);
   const dotRef = useRef<HTMLDivElement>(null);
@@ -27,7 +33,11 @@ const AnimateHeader: React.FC<AnimateHeaderProps> = ({ title, content }) => {
             // Animate vertical line
             setTimeout(() => {
               if (verticalLineRef.current) {
-                verticalLineRef.current.style.height = "70px";
+                if (isShort) {
+                  verticalLineRef.current.style.height = "50px";
+                } else {
+                  verticalLineRef.current.style.height = "70px";
+                }
               }
             }, 1100);
 
@@ -48,7 +58,7 @@ const AnimateHeader: React.FC<AnimateHeaderProps> = ({ title, content }) => {
     }
 
     return () => observer.disconnect();
-  }, []);
+  }, [isShort]);
 
   return (
     <div className="flex flex-col justify-between items-start gap-2">
@@ -81,7 +91,12 @@ const AnimateHeader: React.FC<AnimateHeaderProps> = ({ title, content }) => {
           {/* Animated dot */}
           <div
             ref={dotRef}
-            className="absolute right-[-6px] bottom-[20px] w-3 h-3 rounded-full bg-primary transition-transform duration-500 ease-linear"
+            className={classNames({
+              "absolute right-[-6px] w-3 h-3 rounded-full bg-primary transition-transform duration-500 ease-linear":
+                true,
+              "bottom-[40px]": isShort,
+              "bottom-[20px]": !isShort,
+            })}
             style={{ transform: "scale(0)" }}
           />
         </div>
@@ -89,7 +104,6 @@ const AnimateHeader: React.FC<AnimateHeaderProps> = ({ title, content }) => {
         {/* Right side - Content */}
         <div className="relative w-[60%] md:w-[50%] lg:w-[40%] 2xl:w-[30%] flex justify-end">
           {/* Description */}
-
           {React.isValidElement(content) ? (
             content
           ) : (
