@@ -50,7 +50,7 @@ const GetStarted = () => {
 
           {/* Gradient spotlight effect */}
           <div
-            className="pointer-events-none absolute -inset-px opacity-90 z-20"
+            className="pointer-events-none absolute -inset-px opacity-90 z-20 rounded-3xl"
             style={{
               background: `radial-gradient(1000px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(77, 59, 219, 0.4), transparent 60%)`,
             }}

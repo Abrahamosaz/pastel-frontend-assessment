@@ -1,7 +1,12 @@
 import { FaFacebook, FaLinkedin, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { DesignPixelsProps, FooterLinkProps, NavBarLinkProps } from "./types";
-import { craftEngage, designPixel } from "@/public/images";
+import {
+  DesignPixelsProps,
+  FooterLinkProps,
+  NavBarLinkProps,
+  ScaleBusinessContentCardProps,
+} from "./types";
+import { craftEngage, designPixel, scaleBusiness } from "@/public/images";
 import { navbar } from "@/public/icons";
 
 export const navBarLinks: NavBarLinkProps[] = [
@@ -248,5 +253,31 @@ export const craftEngages: DesignPixelsProps[] = [
       "Create flawless, interactive designs visually with unmatched accuracy and finesse.",
     image: craftEngage.image8,
     showLink: false,
+  },
+];
+
+export const scaleBusinessContentCards: (ScaleBusinessContentCardProps & {
+  id: number;
+})[] = [
+  {
+    id: 1,
+    title: "Content Manager",
+    description:
+      "Handle dynamic data with the built-in content manager. Link data dynamically to any part of your website.",
+    image: scaleBusiness.content,
+  },
+  {
+    id: 2,
+    title: "Media Manager",
+    description:
+      "Organize and edit all media assets, including SVGs, Lottie, and icons, with the built-in image and shape editor.",
+    image: scaleBusiness.media,
+  },
+  {
+    id: 3,
+    title: "SEO",
+    description:
+      "Dynamically update SEO content across pages to optimize your website's search performance.",
+    image: scaleBusiness.seo,
   },
 ];

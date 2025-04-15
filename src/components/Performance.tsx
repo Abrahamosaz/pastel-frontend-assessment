@@ -1,11 +1,37 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { performance } from "@/public/images";
 import CardContent from "./shared/CardContent";
+import { motion } from "motion/react";
 
 const Performance = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const [isInView, setIsInView] = useState(false);
+  const headingRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (headingRef.current) {
+      observer.observe(headingRef.current);
+    }
+
+    return () => {
+      if (headingRef.current) {
+        observer.disconnect();
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -29,10 +55,23 @@ const Performance = () => {
       className="relative flex items-center justify-center py-20 xl:py-30 bg-black text-white overflow-hidden"
     >
       <div className="w-[90%] 2xl:w-[70%] flex flex-col items-center justify-center gap-6">
-        <h2 className="text-4xl md:text-[64px] font-semibold text-center">
-          Performance that <br />
-          sets you apart
-        </h2>
+        <div className="relative" ref={headingRef}>
+          <h2 className="text-4xl md:text-[64px] text-white/30 font-semibold text-center">
+            Performance that <br />
+            sets you apart
+          </h2>
+
+          {/* Animated white overlay text with clip-path wipe */}
+          <motion.h1
+            className="absolute top-0 left-0 text-4xl md:text-[64px] text-white font-semibold text-center"
+            initial={{ clipPath: "inset(0 100% 0 0)" }}
+            animate={isInView ? { clipPath: "inset(0 0% 0 0)" } : {}}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          >
+            Performance that <br />
+            sets you apart
+          </motion.h1>
+        </div>
 
         <div className="mt-10 md:mt-20 lg:mt-30 w-full flex flex-col lg:flex-row items-center gap-6">
           <CardContent

@@ -1,8 +1,11 @@
+"use client";
+
 import React from "react";
 import AnimateHeader from "./shared/AnimateHeader";
 import CardContent from "./shared/CardContent";
 import { designBuild } from "@/public/images";
 import Image from "next/image";
+import { motion } from "motion/react";
 
 const DesignBuild = () => {
   return (
@@ -10,11 +13,11 @@ const DesignBuild = () => {
       <div className="w-[90%] lg:w-[80%] 2xl:w-[70%] ">
         <AnimateHeader
           title={
-            <h2 className="text-black text-5xl xl:text-6xl 2xl:text-8xl leading-[1.1em] 2xl:tracking-[-5px] font-medium">
+            <motion.h2 className="text-black text-5xl xl:text-6xl 2xl:text-8xl leading-[1.1em] 2xl:tracking-[-5px] font-medium">
               Design and
               <br />
               build everything
-            </h2>
+            </motion.h2>
           }
           content={
             <p className="text-xl md:text-2xl font-medium">

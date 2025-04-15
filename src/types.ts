@@ -62,3 +62,10 @@ export interface CardContentProps {
   textContainerStyle?: string;
   className?: string;
 }
+
+export interface ScaleBusinessContentCardProps {
+  title: string;
+  image: StaticImageData;
+  description: string;
+  link?: string;
+}
