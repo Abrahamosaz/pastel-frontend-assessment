@@ -17,7 +17,7 @@ const Hero = () => {
         </div>
 
         <div className="mt-3 md:mt-5 flex md:flex-row flex-col md:items-start justify-between">
-          <div className="hidden md:flex flex-col gap-1 text-5xl xl:text-6xl 2xl:text-8xl font-medium text-black">
+          <div className="hidden md:flex flex-col gap-1 text-5xl xl:text-6xl 2xl:text-8xl font-semibold text-black">
             <h1>Break Limits.</h1>
             <h1>
               Build <span className="text-primary">Anything.</span>

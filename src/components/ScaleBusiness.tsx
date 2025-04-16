@@ -45,23 +45,39 @@ const ScaleBusiness = () => {
       ref={containerRef}
       className="pt-20 xl:pt-30 w-full flex items-center justify-center bg-[#000000] text-white"
     >
-      <div className="w-[90%] lg:w-[80%] 2xl:w-[70%] flex flex-col">
-        <div className="relative" ref={headingRef}>
-          <h1 className="w-[90%] md:w-[70%] text-white/30 text-5xl xl:text-6xl 2xl:text-8xl leading-[1.1em] 2xl:tracking-[-5px] font-medium">
+      <div className="w-full flex flex-col items-center">
+        <div className="relative w-[90%] 2xl:w-[70%]" ref={headingRef}>
+          <h1 className="hidden lg:flex w-[90%] md:w-[70%] text-white/30 text-5xl lg:text-7xl 2xl:text-8xl leading-[1.1em] 2xl:tracking-[-5px] font-medium">
             Scale your <br /> business with
           </h1>
+
+          <h1 className="flex lg:hidden w-[90%] md:w-[70%] text-white/30 text-5xl lg:text-7xl 2xl:text-8xl leading-[1.1em] 2xl:tracking-[-5px] font-medium">
+            Scale your business with
+          </h1>
           <motion.h1
-            className="absolute top-0 left-0 w-[90%] md:w-[70%] text-white text-5xl xl:text-6xl 2xl:text-8xl leading-[1.1em] 2xl:tracking-[-5px] font-medium"
+            className="absolute top-0 left-0 w-[90%] md:w-[70%] hidden lg:flex  text-white text-5xl lg:text-7xl 2xl:text-8xl leading-[1.1em] 2xl:tracking-[-5px] font-medium"
             initial={{ clipPath: "inset(0 100% 0 0)" }}
             animate={isInView ? { clipPath: "inset(0 0% 0 0)" } : {}}
             transition={{ duration: 1.5, ease: "easeInOut" }}
           >
             Scale your <br /> business with
           </motion.h1>
+
+          <motion.h1
+            className="absolute top-0 left-0 w-[90%] flex lg:hidden md:w-[70%] text-white text-5xl lg:text-7xl 2xl:text-8xl leading-[1.1em] 2xl:tracking-[-5px] font-medium"
+            initial={{ clipPath: "inset(0 100% 0 0)" }}
+            animate={isInView ? { clipPath: "inset(0 0% 0 0)" } : {}}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          >
+            Scale your business with
+          </motion.h1>
         </div>
 
         {/* Cards with stacking animation */}
-        <div ref={cardsContainerRef} className="w-full relative min-h-[350vh]">
+        <div
+          ref={cardsContainerRef}
+          className="w-full lg:w-[90%] 2xl:w-[70%] relative min-h-[350vh]"
+        >
           <div className="sticky top-0 h-screen flex items-center justify-center">
             {" "}
             {/* Added top offset */}

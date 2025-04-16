@@ -8,6 +8,7 @@ import ThirdPartyDep from "@/components/ThirdPartyDep";
 import Performance from "@/components/Performance";
 import DesignBuild from "@/components/DesignBuild";
 import GetStarted from "@/components/GetStarted";
+import SwipesSection from "@/components/jumpStart/SwipesSection";
 
 export default function Home() {
   return (
@@ -17,6 +18,8 @@ export default function Home() {
         <DesignPixel />
         <CraftEngage />
         <ScaleBusiness />
+
+        <SwipesSection />
 
         <ThirdPartyDep />
         <Performance />

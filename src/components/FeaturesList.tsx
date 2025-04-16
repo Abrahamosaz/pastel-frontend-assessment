@@ -125,7 +125,7 @@ const FeaturesList = ({
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.4, ease: "easeIn" }}
+                    transition={{ duration: 0.2, ease: "easeIn" }}
                     className="w-full lg:w-[70%] overflow-hidden"
                   >
                     <div className="pb-10">
