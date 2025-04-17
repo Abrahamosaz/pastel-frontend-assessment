@@ -24,6 +24,7 @@ import contact from "./navBar/support/contact.svg";
 import feature from "./navBar/support/feature.svg";
 import support_ from "./navBar/support/support.svg";
 import { appIntegrationIcons } from "./appIntegration";
+import producedBy from "./producedBy.svg";
 
 const product = {
   accessibility,
@@ -45,4 +46,13 @@ const support = { contact, feature, support_ };
 
 const navbar = { product, resource, support };
 
-export { Logo, control, dollar, secure, workflow, navbar, appIntegrationIcons };
+export {
+  Logo,
+  control,
+  dollar,
+  secure,
+  workflow,
+  producedBy,
+  navbar,
+  appIntegrationIcons,
+};

@@ -24,12 +24,14 @@ export interface NavBarItemsProps {
   icon: StaticImageData | null;
   title: string;
   description: string;
+  href: string;
 }
 
 export interface NavBarLinkProps {
   id: number;
   label: string;
   items: NavBarItemsProps[] | null;
+  href: string;
 }
 
 export interface FooterItemsProps {

@@ -27,6 +27,8 @@ import global from "./designBuild/global.webp";
 import popUp from "./designBuild/popUp.webp";
 import safety from "./designBuild/safety.webp";
 
+import { slider1, slider2, slider3, slider4, slider5 } from "./verticalSlider";
+
 const designPixel = { image1, image2, image3, image4 };
 
 const craftEngage = { image5, image6, image7, image8 };
@@ -48,6 +50,14 @@ const designBuild = {
   safety,
 };
 
+const verticalSlider = {
+  slider1,
+  slider2,
+  slider3,
+  slider4,
+  slider5,
+};
+
 export {
   heroImage,
   designPixel,
@@ -55,4 +65,5 @@ export {
   scaleBusiness,
   performance,
   designBuild,
+  verticalSlider,
 };
