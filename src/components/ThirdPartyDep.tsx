@@ -20,8 +20,9 @@ const ThirdPartyDep = () => {
             key="first"
             title="More control, less reliance"
             description="Get complete control over your website's performance and aesthetics without extra plugins."
+            containerStyle="!p-5 !sm:p-10"
           />
-          <div className="col-span-2 bg-[#FFFFFF] p-10 rounded-[18px]">
+          <div className="col-span-2 bg-[#FFFFFF] p-5 sm:p-10 rounded-[18px]">
             <video
               className="w-full h-full object-fill rounded-lg"
               loop
@@ -43,18 +44,21 @@ const ThirdPartyDep = () => {
             key="second"
             title="Cost-effective"
             description="Reduce ongoing costs with built-in tools that let you scale seamlessly without extra expenses."
+            containerStyle="!p-5 !sm:p-10"
           />
           <CardContent
             icon={workflow}
             key="third"
             title="Simplified workflow"
             description="With everything built in, your design process is streamlined, efficient, and hassle-free."
+            containerStyle="!p-5 !sm:p-10"
           />
           <CardContent
             icon={secure}
             key="fouth"
             title="Streamlined & secure"
             description="Fewer external plugins mean fewer vulnerabilities, keeping your site secure and lightweight."
+            containerStyle="!p-5 !sm:p-10"
           />
         </div>
 
@@ -64,14 +68,16 @@ const ThirdPartyDep = () => {
             key="first"
             title="More control, less reliance"
             description="Get complete control over your website's performance and aesthetics without extra plugins."
+            containerStyle="!p-5 !sm:p-10"
           />
           <CardContent
             icon={dollar}
             key="second"
             title="Cost-effective"
             description="Reduce ongoing costs with built-in tools that let you scale seamlessly without extra expenses."
+            containerStyle="!p-5 !sm:p-10"
           />
-          <div className="col-span-2 bg-[#FFFFFF] p-10 rounded-[18px]">
+          <div className="col-span-2 bg-[#FFFFFF] p-5 sm:p-10 rounded-[18px]">
             <video
               className="w-full h-full object-fill rounded-lg"
               loop
@@ -93,17 +99,19 @@ const ThirdPartyDep = () => {
             key="third"
             title="Simplified workflow"
             description="With everything built in, your design process is streamlined, efficient, and hassle-free."
+            containerStyle="!p-5 !sm:p-10"
           />
           <CardContent
             icon={secure}
             key="fouth"
             title="Streamlined & secure"
             description="Fewer external plugins mean fewer vulnerabilities, keeping your site secure and lightweight."
+            containerStyle="!p-5 !sm:p-10"
           />
         </div>
 
         <div className="mt-10 sm:hidden flex flex-col gap-0.5">
-          <div className="col-span-2 bg-[#FFFFFF] p-10 rounded-[18px]">
+          <div className="col-span-2 bg-[#FFFFFF] p-5 sm:p-10 rounded-[18px]">
             <video
               className="w-full h-full object-fill rounded-lg"
               loop
@@ -125,6 +133,7 @@ const ThirdPartyDep = () => {
             key="first"
             title="More control, less reliance"
             description="Get complete control over your website's performance and aesthetics without extra plugins."
+            containerStyle="!p-5 !sm:p-10"
           />
 
           <CardContent
@@ -132,18 +141,21 @@ const ThirdPartyDep = () => {
             key="second"
             title="Cost-effective"
             description="Reduce ongoing costs with built-in tools that let you scale seamlessly without extra expenses."
+            containerStyle="!p-5 !sm:p-10"
           />
           <CardContent
             icon={workflow}
             key="third"
             title="Simplified workflow"
             description="With everything built in, your design process is streamlined, efficient, and hassle-free."
+            containerStyle="!p-5 !sm:p-10"
           />
           <CardContent
             icon={secure}
             key="fouth"
             title="Streamlined & secure"
             description="Fewer external plugins mean fewer vulnerabilities, keeping your site secure and lightweight."
+            containerStyle="!p-5 !sm:p-10"
           />
         </div>
       </div>
