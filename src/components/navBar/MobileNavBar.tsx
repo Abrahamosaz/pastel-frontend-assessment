@@ -1,10 +1,8 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
 import { Logo } from "@/public/icons";
 import Image from "next/image";
-import { IoMdClose } from "react-icons/io";
 import { motion, AnimatePresence } from "framer-motion";
 import { navBarLinks } from "@/constants";
 import { ChevronDownIcon } from "lucide-react";
@@ -56,53 +54,31 @@ const MobileNavBar = () => {
 
           <div className="relative w-8 h-8 flex items-center justify-center">
             <AnimatePresence mode="wait">
-              {open ? (
-                <motion.div
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    willChange: "transform, opacity",
-                  }}
-                  animate={{
-                    opacity: open ? 1 : 0,
-                    rotate: open ? 0 : 45,
-                    scale: open ? 1 : 0.5,
-                  }}
-                  transition={{
-                    duration: 0.3,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <IoMdClose
-                    onClick={() => setOpen(false)}
-                    className="text-primary text-2xl cursor-pointer"
-                  />
-                </motion.div>
-              ) : (
-                <motion.div
-                  style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    willChange: "transform, opacity",
-                  }}
-                  animate={{
-                    opacity: open ? 0 : 1,
-                    rotate: open ? -45 : 0,
-                    scale: open ? 0.5 : 1,
-                  }}
-                  transition={{
-                    duration: 0.3,
-                    ease: "easeInOut",
-                  }}
-                >
-                  <GiHamburgerMenu
-                    onClick={() => setOpen(true)}
-                    className="text-primary text-2xl cursor-pointer"
-                  />
-                </motion.div>
-              )}
+              <button
+                onClick={() => setOpen(!open)}
+                className="lg:hidden relative w-7 h-7 flex items-center justify-center focus:outline-none"
+                aria-label={open ? "Close menu" : "Open menu"}
+              >
+                <div className="relative w-6 h-5 flex items-center justify-center">
+                  <span
+                    className={`absolute h-0.5 w-5 bg-primary rounded-sm transition-all duration-300 ease-out ${
+                      open ? "rotate-45" : "-translate-y-1.5"
+                    }`}
+                  ></span>
+
+                  <span
+                    className={`absolute h-0.5 w-5 bg-primary rounded-sm transition-all duration-300 ${
+                      open ? "opacity-0" : "opacity-100"
+                    }`}
+                  ></span>
+
+                  <span
+                    className={`absolute h-0.5 w-5 bg-primary rounded-sm transition-all duration-300 ease-out ${
+                      open ? "-rotate-45" : "translate-y-1.5"
+                    }`}
+                  ></span>
+                </div>
+              </button>
             </AnimatePresence>
           </div>
         </div>

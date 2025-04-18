@@ -136,7 +136,6 @@ const ThirdPartyDep = () => {
             containerStyle="!p-5 !sm:p-10"
             descriptionStyle="text-sm"
           />
-
           <CardContent
             icon={dollar}
             key="second"
