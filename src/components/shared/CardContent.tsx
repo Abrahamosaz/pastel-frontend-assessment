@@ -33,7 +33,7 @@ const CardContent: React.FC<CardContentProps> = ({
             src={icon}
             alt="Icon"
             quality={100}
-            className={classNames("w-8 h-8", iconStyle)}
+            className={classNames("w-8 h-8 rounded-br-[18px]", iconStyle)}
           />
         )}
 

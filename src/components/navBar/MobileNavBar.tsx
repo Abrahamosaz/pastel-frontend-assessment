@@ -58,83 +58,47 @@ const MobileNavBar = () => {
             <AnimatePresence mode="wait">
               {open ? (
                 <motion.div
-                  key="close"
                   style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
                     willChange: "transform, opacity",
-                    transformStyle: "preserve-3d",
-                  }}
-                  initial={{
-                    rotateZ: -90,
-                    x: -10,
-                    y: -10,
-                    opacity: 0,
                   }}
                   animate={{
-                    rotateZ: 0,
-                    x: 0,
-                    y: 0,
-                    opacity: 1,
-                  }}
-                  exit={{
-                    rotateZ: 90,
-                    x: 10,
-                    y: -10,
-                    opacity: 0,
+                    opacity: open ? 1 : 0,
+                    rotate: open ? 0 : 45,
+                    scale: open ? 1 : 0.5,
                   }}
                   transition={{
-                    transform: {
-                      duration: 0.4,
-                      ease: "easeOut",
-                    },
-                    opacity: {
-                      duration: 0.4,
-                      ease: "ease",
-                    },
+                    duration: 0.3,
+                    ease: "easeInOut",
                   }}
                 >
                   <IoMdClose
-                    onClick={() => setOpen(!open)}
+                    onClick={() => setOpen(false)}
                     className="text-primary text-2xl cursor-pointer"
                   />
                 </motion.div>
               ) : (
                 <motion.div
-                  key="menu"
                   style={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
                     willChange: "transform, opacity",
-                    transformStyle: "preserve-3d",
-                  }}
-                  initial={{
-                    rotateZ: 90,
-                    x: 10,
-                    y: -10,
-                    opacity: 0,
                   }}
                   animate={{
-                    rotateZ: 0,
-                    x: 0,
-                    y: 0,
-                    opacity: 1,
-                  }}
-                  exit={{
-                    rotateZ: -90,
-                    x: -10,
-                    y: -10,
-                    opacity: 0,
+                    opacity: open ? 0 : 1,
+                    rotate: open ? -45 : 0,
+                    scale: open ? 0.5 : 1,
                   }}
                   transition={{
-                    transform: {
-                      duration: 0.4,
-                      ease: "easeOut",
-                    },
-                    opacity: {
-                      duration: 0.4,
-                      ease: "ease",
-                    },
+                    duration: 0.3,
+                    ease: "easeInOut",
                   }}
                 >
                   <GiHamburgerMenu
-                    onClick={() => setOpen(!open)}
+                    onClick={() => setOpen(true)}
                     className="text-primary text-2xl cursor-pointer"
                   />
                 </motion.div>
@@ -180,10 +144,7 @@ const MobileNavBar = () => {
             <div className="w-[90%] md:w-[85%] mx-auto h-full pb-8 overflow-y-auto hide-scrollbar">
               <div className="flex flex-col space-y-4 py-4">
                 {navBarLinks.map((link, index) => (
-                  <div
-                    key={link.id}
-                    className="text-gray-600 hover:text-primary text-lg py-4"
-                  >
+                  <div key={link.id} className="text-gray-600 text-lg py-4">
                     <div
                       onClick={() => {
                         if (activeOpenNav === link.id) {

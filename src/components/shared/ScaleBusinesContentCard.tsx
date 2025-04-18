@@ -9,7 +9,7 @@ const ScaleBusinesContentCard: React.FC<ScaleBusinessContentCardProps> = ({
   description,
 }) => {
   return (
-    <div className="w-full h-full py-6 sm:py-12 pl-6 sm:pl-6 pr-6 sm:pr-6 lg:pl-12 lg:pr-0 flex flex-col lg:flex-row gap-20 sm:gap-30 md:gap-40 lg:gap-20 justify-between bg-[#CDC6FB] lg:bg-[#EBE8FE] lg:rounded-[28px] min-h-[300px] md:min-h-[400px] lg:min-h-[500px] xl:min-h-[650px]">
+    <div className="w-full h-full py-6 sm:py-12 pl-6 sm:pl-6 pr-6 sm:pr-6 lg:pl-12 lg:pr-0 flex flex-col lg:flex-row gap-20 sm:gap-30 md:gap-40 lg:gap-20 justify-between bg-[#CDC6FB] lg:bg-[#EBE8FE] rounded-[12px] lg:rounded-[28px] min-h-[300px] md:min-h-[400px] lg:min-h-[500px] xl:min-h-[650px]">
       <div className="w-full flex flex-col justify-between mb-10 text-black">
         <h1 className="text-2xl xl:text-3xl font-semibold">{title}</h1>
 

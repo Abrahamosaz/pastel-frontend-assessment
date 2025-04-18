@@ -80,7 +80,7 @@ const Performance = () => {
             icon={performance.image13}
             containerStyle="flex-col-reverse !p-0 !gap-0"
             iconStyle="w-full h-full object-cover"
-            textContainerStyle="p-12"
+            textContainerStyle="p-6 md:p-12"
             className="bg-[#1A1A1A] text-white"
             descriptionStyle="text-white/70 text-lg leading-5 w-[80%]"
             titleStyle="text-3xl"
@@ -92,7 +92,7 @@ const Performance = () => {
             icon={performance.image12}
             containerStyle="flex-col-reverse !p-0 !gap-0"
             iconStyle="w-full h-full object-cover"
-            textContainerStyle="p-12"
+            textContainerStyle="p-6 md:p-12"
             className="bg-[#1A1A1A] text-white"
             descriptionStyle="text-white/70 text-lg leading-5 w-[80%]"
             titleStyle="text-3xl"
