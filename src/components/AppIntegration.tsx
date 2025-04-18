@@ -37,7 +37,6 @@ const AppIntegration = () => {
                 })}
                 onHoverStart={() => setHoveredIndex(index)}
                 onHoverEnd={() => setHoveredIndex(null)}
-                onClick={() => setHoveredIndex(index)}
                 animate={{
                   filter:
                     hoveredIndex !== null && hoveredIndex !== index

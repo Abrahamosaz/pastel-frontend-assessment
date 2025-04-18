@@ -116,7 +116,7 @@ const DesignBuild = () => {
             iconStyle="w-full h-full"
             className="col-span-2"
             descriptionStyle="text-base"
-            textContainerStyle="w-[50%]"
+            textContainerStyle="w-full sm:w-[50%]"
           />
         </div>
       </div>
