@@ -9,7 +9,7 @@ import { motion } from "motion/react";
 
 const DesignBuild = () => {
   return (
-    <div className="relative flex items-center justify-center py-20 xl:py-30 bg-bg-primary">
+    <div className="relative flex items-center justify-center py-10 sm:py-20 xl:py-30 bg-bg-primary">
       <div className="w-[90%] lg:w-[80%] 2xl:w-[70%] ">
         <AnimateHeader
           title={
@@ -29,7 +29,7 @@ const DesignBuild = () => {
         />
 
         <div className="mt-10 md:mt-20 flex flex-col md:grid grid-cols-2 lg:grid-cols-4 gap-0.5">
-          <div className="items-center col-span-2 lg:col-span-4 flex flex-col md:grid grid-cols-4 bg-[#FFFFFF] rounded-[18px] p-10">
+          <div className="items-center col-span-2 lg:col-span-4 flex flex-col md:grid grid-cols-4 bg-[#FFFFFF] rounded-[18px] p-5 sm:p-10">
             <CardContent
               icon={null}
               title={
@@ -55,6 +55,7 @@ const DesignBuild = () => {
             description="Build forms for any purpose and effortlessly manage form data natively."
             iconStyle="w-full h-full"
             className="col-span-1 lg:col-span-2"
+            containerStyle="!p-5 !sm:p-10"
             descriptionStyle="text-base w-[50%]"
           />
 
@@ -65,6 +66,7 @@ const DesignBuild = () => {
             iconStyle="w-full h-full"
             className="col-span-1 lg:col-span-2"
             descriptionStyle="text-base w-[50%]"
+            containerStyle="!p-5 !sm:p-10"
           />
 
           <CardContent
@@ -73,6 +75,7 @@ const DesignBuild = () => {
             description="Achieve pixel-perfect responsiveness across all devices with unlimited breakpoints."
             iconStyle="w-full h-full"
             descriptionStyle="text-base"
+            containerStyle="!p-5 !sm:p-10"
           />
           <CardContent
             icon={designBuild.figma}
@@ -80,6 +83,7 @@ const DesignBuild = () => {
             description="Seamlessly import Figma designs into Droip and bring your vision to life in no time."
             iconStyle="w-full h-full"
             descriptionStyle="text-base"
+            containerStyle="!p-5 !sm:p-10"
           />
           <CardContent
             icon={designBuild.code}
@@ -87,6 +91,7 @@ const DesignBuild = () => {
             description="Add custom HTML, CSS, and JavaScript to an element for extended functionality."
             iconStyle="w-full h-full"
             descriptionStyle="text-base"
+            containerStyle="!p-5 !sm:p-10"
           />
           <CardContent
             icon={designBuild.popUp}
@@ -94,6 +99,7 @@ const DesignBuild = () => {
             description="Design engaging pop-ups that captivate visitors and boost conversions."
             iconStyle="w-full h-full"
             descriptionStyle="text-base"
+            containerStyle="!p-5 !sm:p-10"
           />
           <CardContent
             icon={designBuild.autosaved}
@@ -101,6 +107,7 @@ const DesignBuild = () => {
             description="Never lose progress—your work is automatically saved as you build."
             iconStyle="w-full h-full"
             descriptionStyle="text-base"
+            containerStyle="!p-5 !sm:p-10"
           />
           <CardContent
             icon={designBuild.global}
@@ -108,6 +115,7 @@ const DesignBuild = () => {
             description="Maintain consistent branding with centralized style controls."
             iconStyle="w-full h-full"
             descriptionStyle="text-base"
+            containerStyle="!p-5 !sm:p-10"
           />
           <CardContent
             icon={designBuild.ai}
@@ -117,6 +125,7 @@ const DesignBuild = () => {
             className="col-span-2"
             descriptionStyle="text-base"
             textContainerStyle="w-full sm:w-[50%]"
+            containerStyle="!p-5 !sm:p-10"
           />
         </div>
       </div>
