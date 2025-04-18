@@ -49,15 +49,15 @@ const MobileFooter = () => {
       </div>
 
       <div className="w-[90%] border-t-2 border-[#D0D0D2] mt-20 py-4 flex flex-col gap-6 justify-between">
-        <div className="flex items-center justify-between">
-          <div className="text-footer-primary text-sm">
-            <div className="flex items-center gap-2 max-md:justify-end col-span-1">
+        <div className="flex flex-col gap-6 sm:flex-row items-center justify-between">
+          <div className="self-start text-footer-primary text-sm">
+            <div className="flex items-center gap-1 md:gap-2 max-md:justify-end col-span-1">
               <Image alt="producedBy" src={producedBy} className="w-24" />
               <p className="text-[#00000099] font-300 text-sm">A Product by</p>
             </div>
           </div>
 
-          <div className="text-footer-primary text-sm">
+          <div className="self-start text-footer-primary text-sm">
             <div className="w-fit cursor-pointer flex items-center rounded-sm bg-[#9353ff] max-md:col-span-2 md:justify-self-end">
               <div className="py-1 px-1.5 rounded-sm">
                 <svg
@@ -80,7 +80,7 @@ const MobileFooter = () => {
           </div>
         </div>
 
-        <div className="mt-5 mb-15 text-footer-primary/80 text-sm">
+        <div className="mt-2 sm:mt-5 mb-15 text-footer-primary/80 text-sm">
           © {new Date().getFullYear()} Droip. All rights reserved
         </div>
       </div>
