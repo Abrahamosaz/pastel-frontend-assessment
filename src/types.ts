@@ -56,7 +56,7 @@ export interface DesignPixelsProps {
 export interface CardContentProps {
   title: string | ReactNode;
   description: string;
-  icon: any | null;
+  icon: StaticImageData | null;
   titleStyle?: string;
   descriptionStyle?: string;
   iconStyle?: string;

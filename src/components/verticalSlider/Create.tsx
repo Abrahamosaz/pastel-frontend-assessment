@@ -3,7 +3,6 @@ import classNames from "classnames";
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import ImageVerticalSlider from "./ImageVerticalSlider";
-import { FaArrowRight } from "react-icons/fa6";
 import Info from "./Info";
 
 const Create: React.FC = () => {

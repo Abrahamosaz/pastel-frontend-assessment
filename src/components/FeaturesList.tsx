@@ -64,22 +64,23 @@ const FeaturesList = ({
   features: DesignPixelsProps[];
   isReverse?: boolean;
 }) => {
-  const [selectedFeature, setSelectedFeature] = useState<any | null>(
+  const [selectedFeature, setSelectedFeature] = useState<DesignPixelsProps>(
     features[0]
   );
 
-  const [previousFeature, setPreviousFeature] = useState<any | null>(null);
+  const [previousFeature, setPreviousFeature] =
+    useState<DesignPixelsProps | null>(null);
   const [direction, setDirection] = useState<"left" | "right">("right");
 
   // // Handle feature selection
   const handleFeatureSelect = (feature: DesignPixelsProps) => {
-    if (feature.id === selectedFeature.id) return;
+    if (feature.id === selectedFeature?.id) return;
 
     // Save the current feature as previous before updating
     setPreviousFeature(selectedFeature);
 
     // Determine direction based on feature id
-    if (feature.id > selectedFeature.id) {
+    if (feature.id > selectedFeature?.id) {
       setDirection("right");
     } else {
       setDirection("left");
@@ -103,7 +104,7 @@ const FeaturesList = ({
         {features.map((feature, index) => (
           <FeatureItem
             key={feature.id}
-            isActive={feature.id === selectedFeature.id}
+            isActive={feature.id === selectedFeature?.id}
             isLastItem={index === features?.length - 1}
           >
             <div
@@ -113,14 +114,14 @@ const FeaturesList = ({
               <Typography
                 variant="h6"
                 className={classNames({
-                  "text-[#939394]": feature.id !== selectedFeature.id,
-                  "!font-bold !text-3xl": feature.id === selectedFeature.id,
+                  "text-[#939394]": feature.id !== selectedFeature?.id,
+                  "!font-bold !text-3xl": feature.id === selectedFeature?.id,
                 })}
               >
                 {feature.title}
               </Typography>
               <AnimatePresence>
-                {selectedFeature.id === feature.id && (
+                {selectedFeature?.id === feature.id && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
@@ -144,7 +145,7 @@ const FeaturesList = ({
 
                       <Image
                         className="mt-10 flex lg:hidden object-cover rounded-2xl"
-                        src={selectedFeature?.image!}
+                        src={selectedFeature?.image}
                         alt="feature image"
                       />
                     </div>
@@ -169,8 +170,8 @@ const FeaturesList = ({
                 >
                   <div className="w-full h-full relative rounded-[1.2rem]">
                     <Image
-                      src={selectedFeature.image}
-                      alt={selectedFeature.title}
+                      src={selectedFeature?.image}
+                      alt={selectedFeature?.title}
                       fill
                       priority
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -225,8 +226,8 @@ const FeaturesList = ({
                 >
                   <div className="w-full h-full relative rounded-[1.2rem]">
                     <Image
-                      src={previousFeature?.image || selectedFeature.image}
-                      alt={previousFeature?.title || selectedFeature.title}
+                      src={previousFeature?.image || selectedFeature?.image}
+                      alt={previousFeature?.title || selectedFeature?.title}
                       fill
                       priority
                       sizes="(max-width: 768px) 100vw, 50vw"
@@ -241,7 +242,7 @@ const FeaturesList = ({
 
                 {/* New image sliding in */}
                 <motion.div
-                  key={`selected-${selectedFeature.id}`}
+                  key={`selected-${selectedFeature?.id}`}
                   className="absolute inset-0 flex items-center justify-center rounded-[1.2rem]"
                   style={{ zIndex: 2 }}
                   initial={{ x: "-100%" }}
@@ -255,8 +256,8 @@ const FeaturesList = ({
                 >
                   <div className="w-full h-full relative rounded-[1.2rem]">
                     <Image
-                      src={selectedFeature.image}
-                      alt={selectedFeature.title}
+                      src={selectedFeature?.image}
+                      alt={selectedFeature?.title}
                       fill
                       priority
                       sizes="(max-width: 768px) 100vw, 50vw"
