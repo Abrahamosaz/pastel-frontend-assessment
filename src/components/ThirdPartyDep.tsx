@@ -134,6 +134,7 @@ const ThirdPartyDep = () => {
             title="More control, less reliance"
             description="Get complete control over your website's performance and aesthetics without extra plugins."
             containerStyle="!p-5 !sm:p-10"
+            descriptionStyle="text-sm"
           />
 
           <CardContent
@@ -142,6 +143,7 @@ const ThirdPartyDep = () => {
             title="Cost-effective"
             description="Reduce ongoing costs with built-in tools that let you scale seamlessly without extra expenses."
             containerStyle="!p-5 !sm:p-10"
+            descriptionStyle="text-sm"
           />
           <CardContent
             icon={workflow}
@@ -149,6 +151,7 @@ const ThirdPartyDep = () => {
             title="Simplified workflow"
             description="With everything built in, your design process is streamlined, efficient, and hassle-free."
             containerStyle="!p-5 !sm:p-10"
+            descriptionStyle="text-sm"
           />
           <CardContent
             icon={secure}
@@ -156,6 +159,7 @@ const ThirdPartyDep = () => {
             title="Streamlined & secure"
             description="Fewer external plugins mean fewer vulnerabilities, keeping your site secure and lightweight."
             containerStyle="!p-5 !sm:p-10"
+            descriptionStyle="text-sm"
           />
         </div>
       </div>

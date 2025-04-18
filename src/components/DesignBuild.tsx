@@ -56,7 +56,7 @@ const DesignBuild = () => {
             iconStyle="w-full h-full"
             className="col-span-1 lg:col-span-2"
             containerStyle="!p-5 !sm:p-10"
-            descriptionStyle="text-base w-[50%]"
+            descriptionStyle="text-base w-full sm:w-[50%]"
           />
 
           <CardContent
@@ -65,7 +65,7 @@ const DesignBuild = () => {
             description="See real-time CSS changes and fine-tune styles as you need."
             iconStyle="w-full h-full"
             className="col-span-1 lg:col-span-2"
-            descriptionStyle="text-base w-[50%]"
+            descriptionStyle="text-base w-full sm:w-[50%]"
             containerStyle="!p-5 !sm:p-10"
           />
 
