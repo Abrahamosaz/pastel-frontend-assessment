@@ -10,11 +10,11 @@ const ScaleBusinesContentCard: React.FC<ScaleBusinessContentCardProps> = ({
 }) => {
   return (
     <div className="w-full h-full py-6 sm:py-12 pl-6 sm:pl-6 pr-6 sm:pr-6 lg:pl-12 lg:pr-0 flex flex-col lg:flex-row gap-20 sm:gap-30 md:gap-40 lg:gap-20 justify-between bg-[#CDC6FB] lg:bg-[#EBE8FE] rounded-[20px] lg:rounded-[28px] min-h-[300px] md:min-h-[400px] lg:min-h-[500px] xl:min-h-[650px]">
-      <div className="w-full flex flex-col justify-between mb-10 text-black">
+      <div className="w-full flex flex-col gap-10 lg:gap-0 justify-between mb-10 text-black">
         <h1 className="text-2xl xl:text-3xl font-semibold">{title}</h1>
 
         <div className="flex flex-col justify-between gap-2">
-          <p className="w-[70%] lg:w-full text-xl lg:text-2xl font-medium">
+          <p className="w-[90%] sm:w-[70%] lg:w-full text-[#605C7A] lg:text-inherit text-base sm:text-xl lg:text-2xl font-medium">
             {description}
           </p>
 
